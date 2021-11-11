@@ -38,6 +38,26 @@ class Cours {
         })
     }
 
+    static async update(course) {
+        const courses = await Cours.getAll()
+
+        const ind = courses.findIndex(c => c.id === course.id)
+        courses[ind] = course
+        return new Promise((resolve, reject) => {
+            fs.writeFile(
+                path.join(__dirname, '..', 'data', 'courses.json'),
+                JSON.stringify(courses),
+                (err) => {
+                    if (err) {
+                        reject(err)
+                    } else {
+                        resolve()
+                    }
+                }
+            )
+        })
+    }
+
     static getAll() {
         return new Promise((res, rej) => {
             fs.readFile(
