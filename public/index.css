@@ -1,0 +1,21 @@
+.nav-wrapper {
+  padding: 0 2rem;
+  background-color: blueviolet;
+}
+.price {
+  font-size: 2rem;
+}
+.course {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.course h1 {
+  margin-bottom: 2 rem;
+}
+
+.course img {
+  max-width: 300px;
+  height: auto;
+}
