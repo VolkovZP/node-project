@@ -2,7 +2,7 @@
 {{#if courses.length}}
 {{#each courses}}
 <div class="row">
-    <div class="col s3 offset-3">
+    <div class="col s5 offset-3">
         <div class="card">
             <div class="card-image">
                 <img src={{img}} alt={{title}}>
@@ -11,9 +11,13 @@
                 <span class="card-title">{{title}}</span>
                 <p class="price">{{price}} UAH</p>
             </div>
-            <div class="card-action">
+            <div class="card-action actions">
                 <a href="/courses/{{id}}">open course</a>
                 <a href="/courses/{{id}}/edit?allow=true">edit</a>
+                <form action="/card/add" method="POST">
+                    <input type="hidden" name="id" value="{{id}}" />
+                    <button type='submit' class="btn btn-primary">buy</button>
+                </form>
             </div>
         </div>
     </div>

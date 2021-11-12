@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const router = Router()
-const Cours = require('../models/courses')
+const Cours = require('../models/Courses')
 
 router.get('/', async (req, res) => {
     const courses = await Cours.getAll()
@@ -9,6 +9,7 @@ router.get('/', async (req, res) => {
         isCourses: true,
         courses
     })
+
 })
 
 router.get('/:id/edit', async (req, res) => {
