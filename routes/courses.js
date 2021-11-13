@@ -4,6 +4,12 @@ const Cours = require('../models/Courses')
 
 router.get('/', async (req, res) => {
     const courses = await Cours.find()
+        .populate('userId', 'email name')
+        .select('price title img')
+
+    console.log(courses)
+
+
     res.render('courses', {
         title: 'courses',
         isCourses: true,

@@ -23,9 +23,6 @@ app.set('vews', 'views')
 
 
 
-
-
-
 app.use(async (req, res, next) => {
     try {
         const user = await User.findById('618ff1e4fadec0b327ee98a4')
