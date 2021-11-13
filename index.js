@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const homeRouts = require('./routes/home')
 const addRouts = require('./routes/add')
 const cardRouts = require('./routes/card');
+const ordersRouts = require('./routes/orders');
 const Handlebars = require('handlebars')
 const exphbs = require('express-handlebars')
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
@@ -41,6 +42,7 @@ app.use('/courses', coursesRouts)
 app.use('/add', addRouts)
 app.use('/', homeRouts)
 app.use('/card', cardRouts)
+app.use('/orders', ordersRouts)
 
 const PORT = process.env.PORT || 3000
 

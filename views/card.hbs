@@ -24,6 +24,11 @@
     </table>
 
     <p><strong>Цена:</strong> <span class="price"> : {{price}} UAH</span></p>
+
+    <form action="/orders" method="POST">
+        <button type="submit" class="btn">make an order</button>
+    </form>
+
     {{else}}
     <p>Корзина пуста</p>
     {{/if}}
