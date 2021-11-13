@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const exphbs = require('express-handlebars')
 const coursesRouts = require('./routes/courses')
 const homeRouts = require('./routes/home')
 const addRouts = require('./routes/add')
-const cardRouts = require('./routes/card')
+const cardRouts = require('./routes/card');
 /*setting handlebars*/
 const hbs = exphbs.create({
     defaultLayout: 'main',
@@ -14,7 +15,7 @@ app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('vews', 'views')
 /** */
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 
 
