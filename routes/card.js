@@ -14,9 +14,10 @@ router.get('/', async (req, res) => {
     res.render('card', {
         isCard: true,
         title: 'basket',
-        courses: card.course,
+        courses: card.courses,
         price: card.price
     })
 })
 
 module.exports = router
+

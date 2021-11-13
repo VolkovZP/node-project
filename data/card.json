@@ -7,7 +7,15 @@
       "description": "Node.js (Node) is an open source development platform for executing JavaScript code server-side. Node is useful for developing applications that require a persistent connection from the browser to the server and is often used for real-time applications such as chat, news feeds and web push notifications.",
       "id": "616d5968-a93a-4f09-8316-fc47472bfe04",
       "count": 2
+    },
+    {
+      "title": "Node.js",
+      "price": "12000",
+      "img": "https://img.reg.ru/faq/20210514_node_js_1.png",
+      "description": "Node.js (Node) is an open source development platform for executing JavaScript code server-side. Node is useful for developing applications that require a persistent connection from the browser to the server and is often used for real-time applications such as chat, news feeds and web push notifications.",
+      "id": "616d5968-a93a-4f09-8316-fc47472bfe04",
+      "count": 1
     }
   ],
-  "price": 24000
+  "price": 36000
 }
