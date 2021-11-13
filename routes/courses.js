@@ -3,7 +3,7 @@ const router = Router()
 const Cours = require('../models/Courses')
 
 router.get('/', async (req, res) => {
-    const courses = await Cours.getAll()
+    const courses = await Cours.find()
     res.render('courses', {
         title: 'courses',
         isCourses: true,
@@ -25,9 +25,8 @@ router.get('/:id/edit', async (req, res) => {
     })
 })
 
-
 router.post('/edit', async (req, res) => {
-    await Cours.update(req.body)
+    await Cours.findOneAndUpdate(req.body.id, req.body)
     res.redirect('/courses')
 })
 
