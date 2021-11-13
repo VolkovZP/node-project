@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const Cours = require('../models/Courses')
-
+const Card = require('../models/Card')
 const router = Router()
 
 router.post('/add', async (req, res) => {
@@ -12,8 +12,10 @@ router.post('/add', async (req, res) => {
 router.get('/', async (req, res) => {
     const card = await Card.fetch()
     res.render('card', {
+        isCard: true,
         title: 'basket',
-        card
+        courses: card.course,
+        price: card.price
     })
 })
 
