@@ -13,14 +13,14 @@ const ordersRouts = require('./routes/orders');
 const Handlebars = require('handlebars')
 const exphbs = require('express-handlebars')
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
-const User = require('./models/User')
-const varMiddlewaer = require('./middleware/variable')
+const User = require('./models/user')
+const varMiddlewaer = require('./middleware/variables')
 const MONGODB_URI = "mongodb+srv://tripatka:ayVXGpTIQewxXpuz@cluster0.udjgn.mongodb.net/shop"
 /*setting handlebars*/
 const hbs = exphbs.create({
-    defaultLayout: 'main',
-    extname: 'hbs',
-    handlebars: allowInsecurePrototypeAccess(Handlebars)
+  defaultLayout: 'main',
+  extname: 'hbs',
+  handlebars: allowInsecurePrototypeAccess(Handlebars)
 })
 app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
@@ -29,8 +29,8 @@ app.set('vews', 'views')
 
 
 const store = new MongoStrore({
-    collection: 'sessions',
-    uri: MONGODB_URI,
+  collection: 'sessions',
+  uri: MONGODB_URI,
 })
 
 
@@ -38,10 +38,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 
 app.use(session({
-    secret: 'somthing',
-    resave: false,
-    saveUninitialized: false,
-    store
+  secret: 'somthing',
+  resave: false,
+  saveUninitialized: false,
+  store
 }))
 
 app.use(varMiddlewaer)
@@ -56,18 +56,15 @@ app.use('/auth', authRouts)
 const PORT = process.env.PORT || 3000
 
 async function start() {
-    try {
-        await mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
-        app.listen(PORT, () => {
-            console.log(`server is running on port ${PORT}`)
-        })
-    } catch (e) {
-        console.log(e)
-    }
+  try {
+    await mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
+    app.listen(PORT, () => {
+      console.log(`server is running on port ${PORT}`)
+    })
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 
 start()
-
-
-//618ff1e4fadec0b327ee98a4
