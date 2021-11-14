@@ -21,22 +21,23 @@
                 <a href="/courses">courses</a>
             </li>
             {{/if}}
+            {{#if isAuth}}
             {{#if isAdd}}
             <li class="active">
-                <a href="/add">add</a>
+                <a href="/add">Add</a>
             </li>
             {{else}}
             <li>
-                <a href="/add">add courses</a>
+                <a href="/add">Add Courses</a>
             </li>
             {{/if}}
             {{#if isCard}}
             <li class="active">
-                <a href="/card">basket</a>
+                <a href="/card">Basket</a>
             </li>
             {{else}}
             <li>
-                <a href="/card">basket</a>
+                <a href="/card">Basket</a>
             </li>
             {{/if}}
             {{#if isOrder}}
@@ -45,8 +46,20 @@
             </li>
             {{else}}
             <li>
-                <a href="/orders">orders</a>
+                <a href="/orders">Orders</a>
             </li>
+            {{/if}}
+            <li><a href="/auth/logout">Logout</a></li>
+            {{else}}
+            {{#if isLogib}}
+            <li class="active">
+                <a href="/auth/login">Login</a>
+            </li>
+            {{else}}
+            <li>
+                <a href="/auth/login">Login</a>
+            </li>
+            {{/if}}
             {{/if}}
         </ul>
     </div>
