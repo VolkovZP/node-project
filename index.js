@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const csrf = require('csurf')
 const coursesRouts = require('./routes/courses')
 const mongoose = require('mongoose')
 const session = require('express-session')
@@ -44,6 +45,7 @@ app.use(session({
     store
 }))
 
+app.use(csrf())
 app.use(varMiddlewaer)
 app.use(userMiddlewaer)
 
